@@ -148,7 +148,7 @@
             link: function ($scope, scope) { },
             controller: function ($scope) {
                 $scope.back = function () {
-                    $scope.$parent.$parent.userscontent[$scope.index - 1] = $scope.$parent.$parent.oldUserDetailValue;
+                    $scope.$parent.$parent.userscontent[$scope.$parent.$parent.userscontent.indexOf($scope.$parent.$parent.userDetail)] = $scope.$parent.$parent.oldUserDetailValue;
                     $scope.$parent.$parent.showDetailPage = false;
                     $('#confirm-delete').toggleClass('active');
                 }
