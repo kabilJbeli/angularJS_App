@@ -56,9 +56,9 @@
                 $scope.export = function (e) {
                     var newData = [];
                     var selected = 0;
-                    angular.forEach($scope.userscontent, function (v) {
-                        if (v.isSelected) {
-                            newData.push(v);
+                    angular.forEach($scope.userscontent, function (user) {
+                        if (user.isSelected) {
+                            newData.push(user);
                             selected++;
                         }
                     });
@@ -66,7 +66,6 @@
                     var table = $scope.csvContent;
                     var csvString = '';
                     table.map(function (obj) {
-                        var newObject = {};
                         Object.keys(obj).forEach(function (key) {
                             if (key !== 'isSelected' && key !== '$$hashKey' && key !== 'undefined') {
                                 var value = obj[key];
@@ -98,10 +97,10 @@
                 $scope.showDetailPage = false;
                 $scope.remove = function (user) {
                     var newDataList = [];
-                    angular.forEach($scope.userscontent, function (v) {
-                        if (!v.isSelected) {
-                            if (v !== user) {
-                                newDataList.push(v);
+                    angular.forEach($scope.userscontent, function (userC) {
+                        if (!userC.isSelected) {
+                            if (userC !== user) {
+                                newDataList.push(userC);
                             }
                         }
                     });
