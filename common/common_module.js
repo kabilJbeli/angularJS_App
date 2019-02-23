@@ -8,7 +8,7 @@
             scope: {
                 modalcontent: "="
             },
-            link: function ($scope, scope, elem, attrs) { },
+            link: function ($scope, scope) { },
             controller: function ($scope) {
                 $('.close').on("click", function (e) {
                     $('.modal').removeClass('active')
@@ -19,7 +19,7 @@
     common.directive('validation', function () {
         function link(scope, elem, attrs, ngModel) {
             ngModel.$parsers.push(function (viewValue) {
-                var reg = /^[^`~!@#$%\^&*()_+-={}|[\]\\:';"<>?,./1-9]*$/;
+                let reg = /^[^`~!@#$%\^&*()_+-={}|[\]\\:';"<>?,./1-9]*$/;
                 if (viewValue.match(reg)) {
                     scope.valid = true;
                     return viewValue;
@@ -38,10 +38,10 @@
     });
     common.filter('ageFilter', function () {
         return function (birthday) {
-            var birthday = new Date(birthday);
-            var today = new Date();
-            var age = ((today - birthday) / (31557600000));
-            var age = Math.floor(age);
+            let birthdayDate = new Date(birthday);
+            let today = new Date();
+            let age = ((today - birthdayDate) / (31557600000));
+            age = Math.floor(age);
             return age;
         }
     });
@@ -52,10 +52,10 @@
             scope: {
                 userscontent: "="
             },
-            link: function ($scope, scope, elem, attrs) {
+            link: function ($scope, scope) {
                 $scope.export = function (e) {
-                    var newData = [];
-                    var selected = 0;
+                    let newData = [];
+                    let selected = 0;
                     angular.forEach($scope.userscontent, function (user) {
                         if (user.isSelected) {
                             newData.push(user);
@@ -63,12 +63,12 @@
                         }
                     });
                     $scope.csvContent = newData;
-                    var table = $scope.csvContent;
-                    var csvString = '';
+                    let table = $scope.csvContent;
+                    let csvString = '';
                     table.map(function (obj) {
                         Object.keys(obj).forEach(function (key) {
                             if (key !== 'isSelected' && key !== '$$hashKey' && key !== 'undefined') {
-                                var value = obj[key];
+                                let value = obj[key];
                                 csvString = csvString + value + ";";
                             }
                         });
@@ -77,7 +77,7 @@
                     });
                     csvString = csvString.substring(0, csvString.length - 1);
                     if (selected !== 0) {
-                        var a = $('<a/>', {
+                        let a = $('<a/>', {
                             style: 'display:none',
                             href: 'data:application/octet-stream;base64,' + btoa(csvString),
                             download: 'userExport.csv'
@@ -96,7 +96,7 @@
                 }
                 $scope.showDetailPage = false;
                 $scope.remove = function (user) {
-                    var newDataList = [];
+                    let newDataList = [];
                     angular.forEach($scope.userscontent, function (userC) {
                         if (!userC.isSelected) {
                             if (userC !== user) {
@@ -122,10 +122,9 @@
                     $scope.mContent = user;
                     $('.modal').toggleClass('active');
                 }
-                $scope.goToDetailPage = function (user, $index) {
+                $scope.goToDetailPage = function (user) {
                     $scope.userDetail = user;
                     $scope.showDetailPage = true;
-                    $scope.userIndex = $index;
                     $scope.formChanged = 0;
                     $scope.oldUserDetailValue = angular.copy($scope.userDetail);
                 }
@@ -146,10 +145,10 @@
             scope: {
                 index: '='
             },
-            link: function ($scope, scope, elem, attrs) { },
+            link: function ($scope, scope) { },
             controller: function ($scope) {
                 $scope.back = function () {
-                    $scope.$parent.$parent.userscontent[$scope.$parent.$parent.userIndex] = $scope.$parent.$parent.oldUserDetailValue;
+                    $scope.$parent.$parent.userscontent[$scope.index - 1] = $scope.$parent.$parent.oldUserDetailValue;
                     $scope.$parent.$parent.showDetailPage = false;
                     $('#confirm-delete').toggleClass('active');
                 }
