@@ -1,0 +1,26 @@
+<user-detail ng-show="showDetailPage === true"></user-detail>
+<div ng-show="showDetailPage === false">
+  <button ng-click="remove()" ng-disabled="count === 0" class="btn btn-danger">Remove</button>
+  <button ng-click="export(e)" ng-disabled="count === 0" class="btn btn-info">Download</button>
+  <div>Number of selected items is : {{count}}</div>
+  <table id="table" class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">Check</th>
+        <th scope="col">Full name</th>
+        <th scope="col">Email</th>
+        <th scope="col" style="text-align: center;">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr users-row dir-paginate="user in userscontent  | itemsPerPage:10 " usercontent="user">
+      </tr>
+    </tbody>
+  </table>
+
+  <dir-pagination-controls max-size="1" direction-links="true" boundary-links="false">
+  </dir-pagination-controls>
+</div>
+<modal modalcontent="mContent">
+  <modal>

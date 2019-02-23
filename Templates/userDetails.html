@@ -1,0 +1,51 @@
+<div>
+    <table id="table" class="table table-striped">
+        <tr>
+            <td>
+                First Name:
+            </td>
+            <td>
+                <input validation ng-change="$parent.formHasChanged()" value="{{$parent.userDetail.firstName}}"
+                    ng-model="$parent.userDetail.firstName" required />
+            </td>
+
+            <td>
+                Last Name:
+            </td>
+            <td>
+                <input validation ng-change="$parent.formHasChanged()" value="{{$parent.userDetail.lastName}}" ng-model="$parent.userDetail.lastName"
+                    required />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Email:
+            </td>
+            <td>
+                {{$parent.userDetail.email}}
+            </td>
+            <td>
+                Country:
+            </td>
+            <td>
+                {{$parent.userDetail.country}}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Birth Date:
+            </td>
+            <td>
+                {{$parent.userDetail.dateOfBirth | date:'MM.dd.yyyy @ h:mma'}}
+            </td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+    <div style="padding-bottom: 15px;">
+        <button ng-click="$parent.saveUpdatedContent()" class="btn btn-success">Save</button>
+        <button class="btn btn-danger" ng-click="$parent.goBack($parent.initialLastName)" class="btn btn-default"
+            data-toggle="modal" data-target="#confirm-delete">Cancel</button>
+    </div>
+</div>
+<cancel-modal index="$parent.userDetail.id"></cancel-modal>

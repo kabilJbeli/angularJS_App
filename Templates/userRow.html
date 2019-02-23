@@ -1,0 +1,21 @@
+<th scope="row">{{usercontent.id}} </th>
+<td data-toggle="buttons">
+  <label class="btn btn-default ">
+    <input type="checkbox" class="checkBox" ng-change="$parent.updateTotal(usercontent.isSelected)" ng-model="usercontent.isSelected"
+      autocomplete="off">
+    <span class="glyphicon glyphicon-ok"></span>
+  </label>
+</td>
+<td>{{usercontent.firstName}} {{usercontent.lastName}}</td>
+<td>{{usercontent.email}}</td>
+<td style="text-align: center;"> <button type="button" class="btn btn-primary performanceModal" data-toggle="modal"
+    data-target="#IndexPerformanceModal" ng-click='$parent.slectedButton(usercontent)'>
+    Show
+  </button>
+  <button ng-click='$parent.remove(usercontent)' class="btn btn-danger">
+    Delete
+  </button>
+  <button ng-click='$parent.goToDetailPage(usercontent, $parent.$index)' class="btn btn-success">
+    Edit
+  </button>
+</td>

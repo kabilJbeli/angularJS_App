@@ -1,0 +1,15 @@
+<div id="IndexPerformanceModal" class="modal  modal-custom " data-width="760" data-easein="fadeIn" data-backdrop="true"
+    data-keyboard="true" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-modal="true">
+    <div class="modal-dialog">
+        <div class="modal-content ">
+            <div class="modal-header">
+                Selected user: <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            </div>
+            <div class="modal-body">
+                {{modalcontent.firstName}}
+                {{modalcontent.lastName}} :
+                {{modalcontent.dateOfBirth | ageFilter}} years old
+            </div>
+        </div>
+    </div>
+</div>
