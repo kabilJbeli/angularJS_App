@@ -1,4 +1,5 @@
 <div>
+    <p ng-show="valid === false" class="error">Special characters are not allowed</p>
     <table id="table" class="table table-striped">
         <tr>
             <td>
@@ -32,7 +33,7 @@
             </td>
         </tr>
         <tr>
-            <td> 
+            <td>
                 Birth Date:
             </td>
             <td>
@@ -43,9 +44,9 @@
         </tr>
     </table>
     <div style="padding-bottom: 15px;">
-        <button ng-click="$parent.saveUpdatedContent()" class="btn btn-success">Save</button>
-        <button class="btn btn-danger" ng-click="$parent.goBack($parent.initialLastName)" class="btn btn-default"
-            data-toggle="modal" data-target="#confirm-delete">Cancel</button>
+        <button ng-disabled="valid === false" ng-click="$parent.saveUpdatedContent()" class="btn btn-success">Save</button>
+        <button ng-disabled="valid === false" class="btn btn-danger" ng-click="$parent.goBack($parent.initialLastName)"
+            class="btn btn-default" data-toggle="modal" data-target="#confirm-delete">Cancel</button>
     </div>
 </div>
 <cancel-modal index="$parent.userDetail.id"></cancel-modal>

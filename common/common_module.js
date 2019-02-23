@@ -20,8 +20,13 @@
     common.directive('validation', function () {
         function link(scope, elem, attrs, ngModel) {
             ngModel.$parsers.push(function (viewValue) {
-                var reg = /^[^`~!@#$%\^&*()_+={}|[\]\\:';"<>?,./1-9]*$/;
+                var reg = /^[^`~!@#$%\^&*()_+-={}|[\]\\:';"<>?,./1-9]*$/;
                 if (viewValue.match(reg)) {
+                    scope.valid = true;
+                    return viewValue;
+
+                } else {
+                    scope.valid = false;
                     return viewValue;
                 }
                 var transformedValue = ngModel.$modelValue;
@@ -44,6 +49,7 @@
             },
             link: function ($scope, scope, elem, attrs) { },
             controller: function ($scope) {
+                $scope.valid = true;
             }
         };
     });

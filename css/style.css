@@ -58,3 +58,6 @@ label.btn.btn-default {
     text-align: center;
     padding-top: 2px !important;
 }
+.error{
+    color: red;
+}
