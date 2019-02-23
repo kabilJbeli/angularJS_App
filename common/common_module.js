@@ -16,7 +16,6 @@
             }
         };
     });
-
     common.directive('validation', function () {
         function link(scope, elem, attrs, ngModel) {
             ngModel.$parsers.push(function (viewValue) {
@@ -29,10 +28,6 @@
                     scope.valid = false;
                     return viewValue;
                 }
-                var transformedValue = ngModel.$modelValue;
-                ngModel.$setViewValue(transformedValue);
-                ngModel.$render();
-                return transformedValue;
             });
         }
         return {
@@ -108,7 +103,6 @@
             controller: function ($scope) {
                 $scope.formHasChanged = function () {
                     $scope.formChanged = 1;
-
                 }
                 $scope.saveUpdatedContent = function () {
                     $scope.showDetailPage = false;
