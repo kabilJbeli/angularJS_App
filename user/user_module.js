@@ -18,5 +18,17 @@
         };
     });
 
+    users.directive('userDetail', function () {
+        return {
+            restrict: 'EA',
+            templateUrl: 'Templates/userDetails.html',
+            scope: {
+            },
+            link: function ($scope, scope, elem, attrs) { },
+            controller: function ($scope) {
+                $scope.valid = true;
+            }
+        };
+    });
 
 }());

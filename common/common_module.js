@@ -1,6 +1,6 @@
 (function () {
     'use strict';
-    var common = angular.module('common', []);
+    let common = angular.module('common', []);
     common.directive('modal', function () {
         return {
             restrict: 'EA',
@@ -34,18 +34,6 @@
             restrict: 'A',
             require: 'ngModel',
             link: link
-        };
-    });
-    common.directive('userDetail', function () {
-        return {
-            restrict: 'EA',
-            templateUrl: 'Templates/userDetails.html',
-            scope: {
-            },
-            link: function ($scope, scope, elem, attrs) { },
-            controller: function ($scope) {
-                $scope.valid = true;
-            }
         };
     });
     common.filter('ageFilter', function () {
