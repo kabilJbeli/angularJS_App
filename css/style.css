@@ -85,3 +85,12 @@ label.btn.btn-default {
 .error {
     color: red;
 }
+
+thead {
+    background-color: #4b6584;
+}
+
+thead th {
+    color: #fff;
+    font-weight: normal;
+}
