@@ -36,6 +36,20 @@ button.btn {
     border-radius: 0px;
     min-width: 42px;
     text-align: center;
+    border:none;
+}
+button.btn.btn-info{
+
+    background-color:  #a5b1c2;
+   }
+button.btn-primary {
+    background-color:  #2d98da;
+}
+button.btn-danger {
+    background-color: #eb3b5a;
+}
+button.btn-success {
+    background-color: #20bf6b;
 }
 .btn span.glyphicon {    			
     opacity: 0;	
