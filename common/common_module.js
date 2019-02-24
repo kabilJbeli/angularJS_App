@@ -143,7 +143,6 @@
             restrict: 'EA',
             templateUrl: 'Templates/cancelModal.html',
             scope: {
-                index: '='
             },
             link: function ($scope, scope) { },
             controller: function ($scope) {
@@ -152,9 +151,6 @@
                     $scope.$parent.$parent.showDetailPage = false;
                     $('#confirm-delete').toggleClass('active');
                 }
-                $('.close').on("click", function (e) {
-                    $('.modal').removeClass('active')
-                });
                 $scope.closeModal = function () {
                     $('#confirm-delete').toggleClass('active');
                 }
