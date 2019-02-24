@@ -16,19 +16,21 @@ dir-pagination-controls.ng-isolate-scope ul {
 .modal-content {
     top: 20%;
 }
-table tbody tr:nth-child(even){
+
+table tbody tr:nth-child(even) {
     background-color: #f9fafc;
-
 }
-table tbody tr:nth-child(odd){
+
+table tbody tr:nth-child(odd) {
     background-color: #fff;
-
 }
-table tbody tr{
-color: #8a8a8c!important;
+
+table tbody tr {
+    color: #8a8a8c!important;
     line-height: 1.1;
     font-size: 14px!important;
 }
+
 button.btn {
     padding: 4px !important;
     font-size: 13px;
@@ -36,35 +38,42 @@ button.btn {
     border-radius: 0px;
     min-width: 42px;
     text-align: center;
-    border:none;
+    border: none;
 }
-button.btn.btn-info{
 
-    background-color:  #a5b1c2;
-   }
-button.btn-primary {
-    background-color:  #2d98da;
+button.btn.btn-info {
+    background-color: #a5b1c2;
 }
+
+button.btn-primary {
+    background-color: #2d98da;
+}
+
 button.btn-danger {
     background-color: #eb3b5a;
 }
+
 button.btn-success {
     background-color: #20bf6b;
 }
-.btn span.glyphicon {    			
-    opacity: 0;	
+
+.btn span.glyphicon {
+    opacity: 0;
     position: relative;
     left: -7px;
-    top: -2px;			
+    top: -2px;
 }
-.btn .ng-not-empty + span.glyphicon {				
-	opacity: 1 !important;				
+
+.btn .ng-not-empty+span.glyphicon {
+    opacity: 1 !important;
 }
+
 label.btn.btn-default {
     width: 26px;
     height: 26px;
     border-radius: 0px;
 }
+
 .pagination>li>a, .pagination>li>span {
     padding: 0px !important;
     width: 30px;
@@ -72,6 +81,7 @@ label.btn.btn-default {
     text-align: center;
     padding-top: 2px !important;
 }
-.error{
+
+.error {
     color: red;
 }
