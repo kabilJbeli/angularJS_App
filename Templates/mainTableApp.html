@@ -1,5 +1,3 @@
-<spinner ng-show="$parent.dataIsAvailable !== true"></spinner>
-<div ng-show="$parent.dataIsAvailable === true">
   <user-detail ng-show="showDetailPage === true"></user-detail>
   <div ng-show="showDetailPage === false">
     <button ng-click="remove()" ng-disabled="count === 0" class="btn btn-danger">Remove</button>
@@ -26,4 +24,3 @@
   </div>
   <modal modalcontent="mContent">
     <modal>
-</div>
