@@ -16,18 +16,7 @@
             }
         };
     });
-
-    common.directive('spinner', function () {
-        return {
-            restrict: 'EA',
-            templateUrl: 'Templates/spinner.html',
-            scope: {
-            },
-            link: function ($scope, scope) { },
-            controller: function ($scope) {
-            }
-        };
-    });
+   
     common.directive('validation', function () {
         function link(scope, elem, attrs, ngModel) {
             ngModel.$parsers.push(function (viewValue) {
